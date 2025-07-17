@@ -1,6 +1,6 @@
 # FedoraServerLabwc
 
-Install Fedora Server 42 (Network Install) first
+Install Fedora Server 42 (Network Install) first with the following options:
 - keep root account disabled
 - create user with admin privileges
 
