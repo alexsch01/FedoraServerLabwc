@@ -9,8 +9,15 @@ rm labwc-0.9.0-1.fc42.x86_64.rpm
 
 sudo dnf install Xwayland foot -y
 
-### labwc systemd user service
+cat > ~/run-labwc << EOF
+#!/bin/sh
+
+labwc
+EOF
+
+
 mkdir -p ~/.config/systemd/user
+
 cat > ~/.config/systemd/user/labwc.service << EOF
 [Unit]
 Description=labwc
@@ -22,3 +29,5 @@ ExecStart=$HOME/run-labwc
 [Install]
 WantedBy=default.target
 EOF
+
+systemctl --user enable --now labwc.service
