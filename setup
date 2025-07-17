@@ -1,3 +1,6 @@
 #!/bin/sh
 
-echo "Hello World"
+wget https://kojipkgs.fedoraproject.org//packages/labwc/0.9.0/1.fc42/x86_64/labwc-0.9.0-1.fc42.x86_64.rpm
+sudo dnf update -y
+sudo dnf install ./labwc-0.9.0-1.fc42.x86_64.rpm -y
+rm labwc-0.9.0-1.fc42.x86_64.rpm
