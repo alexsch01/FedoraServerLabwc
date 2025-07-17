@@ -20,5 +20,5 @@ Type=simple
 ExecStart=$HOME/run-labwc
 
 [Install]
-WantedBy=default.targe
+WantedBy=default.target
 EOF
