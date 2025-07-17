@@ -5,7 +5,7 @@ wget https://kojipkgs.fedoraproject.org//packages/labwc/0.9.0/1.fc42/x86_64/labw
 sudo dnf install ./labwc-0.9.0-1.fc42.x86_64.rpm -y
 rm labwc-0.9.0-1.fc42.x86_64.rpm
 
-sudo dnf install labwc Xwayland foot swaybg wlr-randr -y
+sudo dnf install Xwayland foot swaybg wlr-randr -y
 mkdir -p ~/.config/labwc ~/.config/systemd/user
 
 cat > ~/.config/labwc/autostart << EOF
