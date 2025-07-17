@@ -29,5 +29,4 @@ ExecStart=$HOME/run-labwc
 WantedBy=default.target
 EOF
 
-systemctl --user enable labwc.service
-reboot
+systemctl --user enable --now labwc.service
