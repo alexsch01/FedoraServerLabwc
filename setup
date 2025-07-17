@@ -11,7 +11,8 @@ sudo dnf install Xwayland foot -y
 
 ### labwc systemd user service
 mkdir -p ~/.config/systemd/user
-cat '[Unit]
+cat > ~/.config/systemd/user/labwc.service << EOF
+[Unit]
 Description=labwc
 
 [Service]
@@ -19,4 +20,5 @@ Type=simple
 ExecStart=$HOME/run-labwc
 
 [Install]
-WantedBy=default.target' | tee ~/.config/systemd/user/labwc.service > /dev/null
+WantedBy=default.targe
+EOF
