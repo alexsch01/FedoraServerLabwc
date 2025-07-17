@@ -7,16 +7,12 @@ wget https://kojipkgs.fedoraproject.org//packages/labwc/0.9.0/1.fc42/x86_64/labw
 sudo dnf install ./labwc-0.9.0-1.fc42.x86_64.rpm -y
 rm labwc-0.9.0-1.fc42.x86_64.rpm
 
-sudo dnf install Xwayland foot -y
+sudo dnf install Xwayland foot swaybg -y
+mkdir -p ~/.config/labwc ~/.config/systemd/user
 
-cat > ~/.local/share/run-labwc << EOF
-#!/bin/sh
-
-labwc
+cat > ~/.config/autostart << EOF
+swaybg -c "#21333b"
 EOF
-
-chmod +x ~/.local/share/run-labwc
-mkdir -p ~/.config/systemd/user
 
 cat > ~/.config/systemd/user/labwc.service << EOF
 [Unit]
@@ -24,7 +20,7 @@ Description=labwc
 
 [Service]
 Type=simple
-ExecStart=$HOME/.local/share/run-labwc
+ExecStart=labwc
 
 [Install]
 WantedBy=default.target
