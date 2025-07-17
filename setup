@@ -10,7 +10,7 @@ rm labwc-0.9.0-1.fc42.x86_64.rpm
 sudo dnf install Xwayland foot swaybg -y
 mkdir -p ~/.config/labwc ~/.config/systemd/user
 
-cat > ~/.config/autostart << EOF
+cat > ~/.config/labwc/autostart << EOF
 swaybg -c "#21333b"
 EOF
 
