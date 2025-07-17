@@ -15,6 +15,7 @@ cat > ~/run-labwc << EOF
 labwc
 EOF
 
+chmod +x ~/run-labwc
 mkdir -p ~/.config/systemd/user
 
 cat > ~/.config/systemd/user/labwc.service << EOF
