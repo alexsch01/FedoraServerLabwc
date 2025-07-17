@@ -11,7 +11,7 @@ sudo dnf install Xwayland foot swaybg wlr-randr -y
 mkdir -p ~/.config/labwc ~/.config/systemd/user
 
 cat > ~/.config/labwc/autostart << EOF
-swaybg -c "#21333b"
+swaybg -c "#21333b" &
 
 wlrFirstMonitor=\$(wlr-randr --json | jq -r '[.[]][0].name')
 wlr-randr --output \$wlrFirstMonitor --mode 1920x1080
