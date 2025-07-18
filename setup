@@ -17,6 +17,12 @@ wlr-randr --output \$wlrFirstMonitor --mode 1920x1080
 sfwbar &
 EOF
 
+mkdir -p ~/.local/share/applications
+cp /usr/share/applications/footclient.desktop ~/.local/share/applications
+cp /usr/share/applications/foot-server.desktop ~/.local/share/applications
+echo "NoDisplay=true" >> ~/.local/share/applications/footclient.desktop
+echo "NoDisplay=true" >> ~/.local/share/applications/foot-server.desktop
+
 cat > ~/.config/systemd/user/labwc.service << EOF
 [Unit]
 Description=labwc
@@ -28,10 +34,5 @@ ExecStart=labwc
 [Install]
 WantedBy=default.target
 EOF
-
-cp /usr/share/applications/footclient.desktop ~/.local/share/applications
-cp /usr/share/applications/foot-server.desktop ~/.local/share/applications
-echo "NoDisplay=true" >> ~/.local/share/applications/footclient.desktop
-echo "NoDisplay=true" >> ~/.local/share/applications/foot-server.desktop
 
 systemctl --user enable --now labwc.service
