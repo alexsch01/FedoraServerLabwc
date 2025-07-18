@@ -29,4 +29,9 @@ ExecStart=labwc
 WantedBy=default.target
 EOF
 
+cp /usr/share/applications/footclient.desktop ~/.local/share/applications
+cp /usr/share/applications/foot-server.desktop ~/.local/share/applications
+echo "NoDisplay=true" >> ~/.local/share/applications/footclient.desktop
+echo "NoDisplay=true" >> ~/.local/share/applications/foot-server.desktop
+
 systemctl --user enable --now labwc.service
