@@ -5,7 +5,7 @@ wget https://kojipkgs.fedoraproject.org//packages/labwc/0.9.0/1.fc42/x86_64/labw
 sudo dnf install ./labwc-0.9.0-1.fc42.x86_64.rpm -y
 rm labwc-0.9.0-1.fc42.x86_64.rpm
 
-sudo dnf install Xwayland foot swaybg wlr-randr -y
+sudo dnf install Xwayland foot swaybg wlr-randr sfwbar -y
 mkdir -p ~/.config/labwc ~/.config/systemd/user
 
 cat > ~/.config/labwc/autostart << EOF
@@ -13,6 +13,8 @@ swaybg -c "#21333b" &
 
 wlrFirstMonitor=\$(wlr-randr --json | jq -r '[.[]][0].name')
 wlr-randr --output \$wlrFirstMonitor --mode 1920x1080
+
+sfwbar &
 EOF
 
 cat > ~/.config/systemd/user/labwc.service << EOF
