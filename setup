@@ -6,7 +6,7 @@ sudo dnf install ./labwc-0.9.0-1.fc42.x86_64.rpm -y
 rm labwc-0.9.0-1.fc42.x86_64.rpm
 
 sudo dnf install Xwayland foot swaybg wlr-randr sfwbar -y
-mkdir -p ~/.config/labwc ~/.config/systemd/user
+mkdir -p ~/.config/labwc ~/.local/share/applications ~/.config/systemd/user
 
 cat > ~/.config/labwc/autostart << EOF
 swaybg -c "#21333b" &
@@ -17,7 +17,6 @@ wlr-randr --output \$wlrFirstMonitor --mode 1920x1080
 sfwbar &
 EOF
 
-mkdir -p ~/.local/share/applications
 cp /usr/share/applications/footclient.desktop ~/.local/share/applications
 cp /usr/share/applications/foot-server.desktop ~/.local/share/applications
 echo "NoDisplay=true" >> ~/.local/share/applications/footclient.desktop
