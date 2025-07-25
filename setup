@@ -2,12 +2,7 @@
 
 echo "exclude=*.i686" | sudo tee -a /etc/dnf/dnf.conf
 
-### Temporary
-wget https://kojipkgs.fedoraproject.org/packages/labwc/0.9.0/1.fc42/x86_64/labwc-0.9.0-1.fc42.x86_64.rpm
-sudo dnf install ./labwc-0.9.0-1.fc42.x86_64.rpm -y
-rm labwc-0.9.0-1.fc42.x86_64.rpm
-
-sudo dnf install foot swaybg wlr-randr sfwbar -y
+sudo dnf install labwc foot swaybg wlr-randr sfwbar -y
 mkdir -p ~/.config/labwc ~/.local/share/applications ~/.config/systemd/user
 
 cat > ~/.config/labwc/autostart << EOF
