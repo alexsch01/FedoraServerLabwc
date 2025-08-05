@@ -1,5 +1,6 @@
 #!/bin/sh
 
+sudo systemctl disable cockpit.socket
 echo "exclude=*.i686" | sudo tee -a /etc/dnf/dnf.conf
 
 sudo dnf install labwc foot swaybg wlr-randr sfwbar -y
