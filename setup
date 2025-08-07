@@ -3,7 +3,7 @@
 sudo systemctl disable cockpit.socket
 echo "exclude=*.i686" | sudo tee -a /etc/dnf/dnf.conf
 
-sudo dnf install labwc foot swaybg wlr-randr sfwbar dconf -y
+sudo dnf install labwc foot swaybg wlr-randr sfwbar -y
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 mkdir -p ~/.config/labwc ~/.local/share/applications ~/.config/systemd/user
 
